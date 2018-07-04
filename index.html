@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>简历</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="https://avatars0.githubusercontent.com/u/10241663?s=460&v=4" type="image/x-icon">
     <link rel="shortcut icon" href="https://avatars0.githubusercontent.com/u/10241663?s=460&v=4" type="image/x-icon">
-    <title>简历</title>
     <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
-<body>
-    <div id="preview" style="padding-left: 10%"></div>
+<body style="background-color: #e9ecef">
+    <div id="preview" style="padding-left: 10%;">请稍等</div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="markdown.js"></script>
 <script type="text/javascript">
-    document.getElementById('preview').innerHTML = markdown.toHTML('请稍等');
     $.get('https://raw.githubusercontent.com/serrt/interview/master/README.md').then(function (res) {
         document.getElementById('preview').innerHTML = markdown.toHTML(res);
     })
