@@ -14,7 +14,7 @@
 <script src="markdown.js"></script>
 <script type="text/javascript">
     document.getElementById('preview').innerHTML = markdown.toHTML('请稍等');
-    $.get('https://serrt.github.io/interview/README.md').then(function (res) {
+    $.get('https://raw.githubusercontent.com/serrt/interview/master/README.md').then(function (res) {
         document.getElementById('preview').innerHTML = markdown.toHTML(res);
     })
 </script>
