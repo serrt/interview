@@ -30,7 +30,7 @@
 - 项目架构: [Laravel 框架](https://laravel.com), [Vue](https://cn.vuejs.org), [Dcloud 打包](http://www.dcloud.io)
 - 服务器部署和维护，代码自动更新，APP打包和发布
 - 三方支付(微信, 支付宝)
-- 电商开放接口([淘宝开放平台](http://open.taobao.com), [京东联盟](http://open.jd.com)
+- 电商开放接口([淘宝开放平台](http://open.taobao.com), [京东联盟](http://open.jd.com))
   
 ## 重庆领客酷比客信息技术有限公司 （2017.05-2017.08 ）
 
