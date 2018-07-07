@@ -5,6 +5,7 @@
  - 专科/重庆大学计算机应用(在读) 
  - 工作年限：3年
  - Github：[http://github.com/serrt](http://github.com/serrt)
+ - Gitee：[https://gitee.com/panliang](https://gitee.com/panliang)
  - 期望职位：PHP高级程序员，Web前端开发
  - 期望薪资：7K~8K
  - 期望城市：重庆
@@ -51,6 +52,20 @@ P2P网贷。
 - 项目架构: [Laravel 框架](https://laravel.com), html/js, [Vue](https://cn.vuejs.org), [APICloud 打包](https://www.apicloud.com), [Cordova 打包](http://cordova.apache.org)
 - [新浪支付](http://pay.mobile.sina.cn)
 - IOS的上架和发布
+
+## 其他项目
+
+### [道角村便民服务中心](http://bnlzwdjc.com)
+巴南区龙洲湾道角村社区便民服务。
+网站开发, 需求对接. **已改版**
+
+- 项目架构: [ThinkPHP 3.2.3](http://www.thinkphp.cn)
+
+### 养老消费宝, 已下线
+电商系统, 消费返利
+商城系统开发, 用户购物流程开发
+
+- 项目架构: [ThinkPHP 3.2.3](http://www.thinkphp.cn)
 
 # 技能清单
 
