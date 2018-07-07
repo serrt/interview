@@ -14,7 +14,7 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="markdown.js"></script>
 <script type="text/javascript">
-    $.get('https://raw.githubusercontent.com/serrt/interview/master/README.md').then(function (res) {
+    $.get('README.md').then(function (res) {
         document.getElementById('preview').innerHTML = markdown.toHTML(res);
     })
 </script>
