@@ -76,7 +76,7 @@ P2P网贷。
 - 数据库相关：MySQL/MongoDB/Sql Server
 - 版本管理、文档和自动化部署工具：Svn/Git/Composer
 - 服务器: centos/linux
-- 云和开放平台：Dcloud/APICloud/淘宝开放平台/京东开放平台/微信小程序开发
+- 云和开放平台：Dcloud/APICloud/淘宝开放平台/京东开放平台/微信/支付宝
       
 ---
 
