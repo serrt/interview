@@ -6,7 +6,7 @@
  - 工作年限：3年
  - Github：[http://github.com/serrt](http://github.com/serrt)
  - Gitee：[https://gitee.com/panliang](https://gitee.com/panliang)
- - 期望职位：PHP高级程序员，Web前端开发
+ - 期望职位：PHP中级程序员，Web前端开发
  - 期望薪资：7K~8K
  - 期望城市：重庆
 

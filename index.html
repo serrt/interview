@@ -14,8 +14,16 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="markdown.js"></script>
 <script type="text/javascript">
-    var url = 'https://raw.githubusercontent.com/serrt/interview/master/README.md';
-    // var url = 'README.md';
+    function getQueryString(name) { 
+        var reg = new RegExp('(^|&)'+ name +'=([^&]*)(&|$)');
+        var r = window.location.search.substr(1).match(reg); 
+        if(r!=null)return unescape(r[2]); return null; 
+    }
+    var file = getQueryString('file');
+    if (!file) {
+        file = 'README.md';
+    }
+    var url = 'https://raw.githubusercontent.com/serrt/interview/master/'+file;
     $.get(url).then(function (res) {
         document.getElementById('preview').innerHTML = markdown.toHTML(res);
     })
