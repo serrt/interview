@@ -10,7 +10,7 @@
      helper = store
 ```
 
-​- windows的下**用户文件**, 一般是`C:/Users/用户名`，添加`_netrc`文件
+​- windows的下**用户文件**, 一般是 `C:/Users/用户名` ，添加 `_netrc` 文件
 
 ```
 machine git服务器, 如: gitee.com, github.com

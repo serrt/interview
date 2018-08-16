@@ -24,10 +24,7 @@
         file = 'README.md';
     }
     var uri = 'https://raw.githubusercontent.com/serrt/interview/master/';
-    if (window.location.protocol == 'file:') {
-        uri = '';
-    }
-    var url = uri+file;
+    url = uri+file;
     $.get(url).then(function (res) {
         document.getElementById('preview').innerHTML = markdown.toHTML(res);
     })
