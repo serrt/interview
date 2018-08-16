@@ -4,11 +4,14 @@
 ## Git
 ​
 - 保存用户名和密码
+
 ```
 [credential]
      helper = store
 ```
+
 ​- windows的下**用户文件**, 一般是`C:/Users/用户名`，添加`_netrc`文件
+
 ```
 machine git服务器, 如: gitee.com, github.com
 login 用户名, 如: serrt
