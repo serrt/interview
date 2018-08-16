@@ -18,6 +18,12 @@ login 用户名, 如: serrt
 password 密码, 如: password
 ```
 
+- 保持ssh长时间的活性: `git安装目录/etc/ssh/ssh_config`, 添加
+
+```
+ServerAliveInterval 60
+```
+
 ## 图片资源
 
 - [https://colorhub.me](https://colorhub.me)
