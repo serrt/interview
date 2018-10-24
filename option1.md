@@ -127,7 +127,7 @@ Laravel 代码提示, 推荐在PhpStorm中使用
 
 #### [jquery表单验证](http://www.runoob.com/jquery/jquery-plugin-validate.html)
 
-- remote 异步验证
+- remote:url 异步验证
 - decimal:2 保留2位小数
 
 #### [select2](https://select2.org/)
