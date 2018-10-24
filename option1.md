@@ -20,7 +20,7 @@
 
 ### 文档
 
-- [原文]https://laravel.com/docs/5.6)
+- [原文](https://laravel.com/docs/5.6)
 - [中文翻译](https://laravel-china.org/docs/laravel/5.6)
 - [速查表](https://cs.laravel-china.org/)
 - [API源码](https://laravel.com/api/5.6/)
@@ -32,15 +32,16 @@
 - `namespace` 命名空间
 - `middleware` 中间件
 - `resource` 资源路由
-    `Route::get('example', ['uses' => 'ExampleController@index'])`
-    `Route::get('example/create', ['uses' => 'ExampleController@create'])`
-    `Route::post('example', ['uses' => 'ExampleController@store'])`
-    `Route::get('example/{example}', ['uses' => 'ExampleController@show'])`
-    `Route::get('example/{example}/edit', ['uses' => 'ExampleController@edit'])`
-    `Route::put('example/{example}', ['uses' => 'ExampleController@update'])`
-    `Route::delete('example/{example}', ['uses' => 'ExampleController@destroy'])`
+    1. `Route::get('example', ['uses' => 'ExampleController@index'])`
+    2. `Route::get('example/create', ['uses' => 'ExampleController@create'])`
+    3. `Route::post('example', ['uses' => 'ExampleController@store'])`
+    4. `Route::get('example/{example}', ['uses' => 'ExampleController@show'])`
+    5. `Route::get('example/{example}/edit', ['uses' => 'ExampleController@edit'])`
+    6. `Route::put('example/{example}', ['uses' => 'ExampleController@update'])`
+    7. `Route::delete('example/{example}', ['uses' => 'ExampleController@destroy'])`
 - `routes\admin.php` 路由文件
 - `App\Providers\RouteServiceProvider` 路由服务
+- `php artisan route:list` 查看当前网站的所有路由
 
 ### 控制器
 
@@ -50,9 +51,25 @@
 
 在控制器里面添加表单验证
 
+- `php artisan make:request ExampleRequest` 为单个请求生成独立的验证文件
+
 ### 模型
 
+- `php artisan make:model Models\ExampleModel -m` 创建模型文件, `-m` 代表同时创建模型的**迁移文件**, `Models` 是指模型文件所在的目录
+- `protected $table = 'example_am'` 模型所指向的数据表名, 默认是**模型名小写的复数**形式
+- `protected $fillable = ['id', 'name']` 填写模型的需要批量添加的字段, `php artisan model:fillable 数据表名` 可以自动生成(项目自己写的命令)
+
 ### 数据迁移
+
+用代码创建数据表
+
+- `php artisan make:migration create_users_table` 创建数据表的迁移文件
+- `php artisan migrate:generate 表名` 逆向生成迁移文件(来源扩展[xethron/migrations-generator](https://github.com/xethron/migrations-generator))
+
+### 数据填充
+
+- 添加默认的数据
+- 添加随机数据
 
 ### 扩展
 

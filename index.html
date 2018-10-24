@@ -9,9 +9,9 @@
     <link rel="stylesheet" type="text/css" href="github-markdown.css">
 </head>
 <body style="background-color: #e9ecef">
-    <div id="preview" style="padding-left: 10%;">请稍等</div>
+    <div class="markdown-body" id="preview" style="padding-left: 10%;">请稍等</div>
 </body>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="jquery.min.js"></script>
 <script src="markdown.js"></script>
 <script type="text/javascript">
     function getQueryString(name) { 
@@ -23,7 +23,8 @@
     if (!file) {
         file = 'README.md';
     }
-    var uri = 'https://raw.githubusercontent.com/serrt/interview/master/';
+    var uri = 'http://localhost/interview/';
+    // var uri = 'https://raw.githubusercontent.com/serrt/interview/master/';
     url = uri+file;
     $.get(url).then(function (res) {
         document.getElementById('preview').innerHTML = markdown.toHTML(res);
