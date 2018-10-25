@@ -117,6 +117,7 @@ Laravel 代码提示, 推荐在PhpStorm中使用
 - 重写 `Sms.php` 中的 **50行** 的 `send_sms` 方法
 - 控制器代码
 ```php
+
 use App\Traits\Sms;
 
 class ExampleController extends Controller
@@ -132,6 +133,7 @@ class ExampleController extends Controller
         $this->clearCode($phone, '');
     }
 }
+
 ```
 
 
