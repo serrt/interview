@@ -23,8 +23,11 @@
     if (!file) {
         file = 'README.md';
     }
+    var host = window.location.host;
     var uri = 'http://localhost/interview/';
-    // var uri = 'https://raw.githubusercontent.com/serrt/interview/master/';
+    if (window.location.host.indexOf('github') >= 0) {
+        uri = 'https://raw.githubusercontent.com/serrt/interview/master/';
+    }
     url = uri+file;
     $.get(url).then(function (res) {
         document.getElementById('preview').innerHTML = markdown.toHTML(res);
