@@ -57,7 +57,8 @@
 
 - `php artisan make:model Models\ExampleModel -m` 创建模型文件, `-m` 代表同时创建模型的**迁移文件**, `Models` 是指模型文件所在的目录
 - `protected $table = 'example_am'` 模型所指向的数据表名, 默认是**模型名小写的复数**形式
-- `protected $fillable = ['id', 'name']` 填写模型的需要批量添加的字段, `php artisan model:fillable 数据表名` 可以自动生成(项目自己写的命令)
+- `protected $fillable = ['id', 'name']` 填写模型的需要批量添加的字段
+- `php artisan model:fillable 数据表名` 可以自动生成 `fillable`(项目自己写的命令)
 - `scope` 查询作用域, 常见的 `scopeOrder()` 封装模型的查询条件
 
 ### 数据迁移
