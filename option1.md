@@ -58,6 +58,7 @@
 - `php artisan make:model Models\ExampleModel -m` 创建模型文件, `-m` 代表同时创建模型的**迁移文件**, `Models` 是指模型文件所在的目录
 - `protected $table = 'example_am'` 模型所指向的数据表名, 默认是**模型名小写的复数**形式
 - `protected $fillable = ['id', 'name']` 填写模型的需要批量添加的字段, `php artisan model:fillable 数据表名` 可以自动生成(项目自己写的命令)
+- `scope` 查询作用域, 常见的 `scopeOrder()` 封装模型的查询条件
 
 ### 数据迁移
 
@@ -108,6 +109,32 @@ Laravel 代码提示, 推荐在PhpStorm中使用
 - 多张数据表 `php artisan migrate:generate table1,table2`
 - 忽略某张数据表 `php artisan migrate:generate --ignore=table1,table2`
 
+#### 短信验证码
+
+自己封装的[Trait](http://php.net/manual/zh/language.oop5.traits.php)文件 [Sms.php](https://github.com/serrt/blog/blob/master/app/Traits/Sms.php)
+
+- 将 **Sms.php** 复制到项目中, 对应的目录为: `app/Traits/Sms.php`
+- 重写 `Sms.php` 中的 **50行** 的 `send_sms` 方法
+- 控制器代码
+```php
+use App\Traits\Sms;
+
+class ExampleController extends Controller
+{
+    use Sms;
+
+    public function index()
+    {
+        $this->sendCode($phone, '');
+
+        $this->checkCode($phone, '', $code);
+
+        $this->clearCode($phone, '');
+    }
+}
+```
+
+
 ### 前端插件
 
 项目中用到的前端插件
@@ -116,37 +143,95 @@ Laravel 代码提示, 推荐在PhpStorm中使用
 
 文件预览, 文件上传
 
+```
+<input type="file" name="file" class="file-input" data-initial-preview="https://www.baidu.com/a.jpg">
+```
+
+- `class = file-input` 类名必须
+- `data-initial-preview` 默认文件, 全路径, 多个用 `,` 号隔开
+- `multiple` 允许多选, 同时 `name` 属性设置为 `file[]`
+
 #### 日期选择器
 
 - [date-picker](https://github.com/uxsolutions/bootstrap-datepicker)
-- [datetime-picker](https://www.malot.fr/bootstrap-datetimepicker/)
+- [datetime-picker](https://www.malot.fr/bootstrap-datetimepicker)
+
+```html
+<input type="text" name="time" class="date">
+
+<input type="text" name="time" class="date-time">
+```
 
 #### 编辑器
 
 [Froala Editor](https://github.com/froala/wysiwyg-editor)
 
-- 引用
-    ```
-    <!-- 引入编辑器 style: 样式文件, script: 脚本文件, element: 元素选择器 -->
-    @component('component.editor', ['style' => true, 'script' => true, 'element' => '#inputContent'])
-    @endcomponent
-    ```
+```
+<!-- 引入编辑器 style: 样式文件, script: 脚本文件, element: 元素选择器 -->
+@component('component.editor', ['style' => true, 'script' => true, 'element' => '#inputContent'])
+@endcomponent
+```
 
-- 内容预览
-    ```
-    <!-- 引入编辑器样式文件 -->
-    @component('component.editor', ['style' => true])
-    @endcomponent
+- `style => true` 引入样式文件
+- `script => true` 引入脚本文件
+- `element => #inputContent` 默认初始化编辑器
 
-    <!-- class:fr-view 必须 -->
-    <div class="fr-view">编辑器内容</div>
-   ```
+```
+<!-- 引入编辑器样式文件 -->
+@component('component.editor', ['style' => true])
+@endcomponent
+
+<!-- class:fr-view 必须 -->
+<div class="fr-view">编辑器内容</div>
+```
+
+- 预览编辑器的内容, 只需要引入样式文件即可, 在预览的 `div` 中加入 `fr-view` 类
 
 #### [jquery表单验证](http://www.runoob.com/jquery/jquery-plugin-validate.html)
 
-- remote:url 异步验证
-- decimal:2 保留2位小数
+```html
+<form action="" class="validate">
+    <input type="text" name="name" data-rule-required="true">
+    <input type="text" name="name" class="ignore">
+</form>
+```
+
+- `form` 表单加入 `validate` 类, 表示验证该表单
+- `data-rule-required = true` 表示该项必填, 更多的验证规则, 请看[文档](http://www.runoob.com/jquery/jquery-plugin-validate.html)
+- `class = ignore` 表示该项不验证
+- `data-rule-remote = https://www.baidu.com` 异步验证, 接口返回 **json** 示例 `{code: 200, message: ''}`, `{code: 400, message: '错误信息'}`
+- `data-rule-decimal = 2` 保留2位小数, 与 `data-rule-number = true` 一起使用, 便于验证金额
 
 #### [select2](https://select2.org/)
 
 下拉框的扩展
+
+```html
+<select name="name" class="select2" data-ajax-url="https://www.baidu.com" data-json="[{id:1, name: 'name'}]"></select>
+```
+
+- `data-ajax-url` 异步请求数据的地址
+- `data-json` 初始化选中的项, **json** 格式
+
+## GIT
+
+### 保存密码
+
+保存git的用户名和密码,打开config文件，添加：
+~~~
+[credential]
+     helper = store
+~~~
+
+在Windows下, 保存git的用户名和密码
+
+1. 打开自己的用户文件夹, 并创建`_netrc`文件
+2. 在`_netrc`文件中输入以下内容
+~~~
+machine git服务器, 如: gitee.com, github.com
+login 用户名, 如: serrt
+password 密码, 如: password
+~~~
+
+在 **clone** 项目的时候, 修改项目地址
+例如: `https://github.com/serrt/admin-iframe.git`, 修改为 `https://用户名:密码@github.com/serrt/admin-iframe.git`
