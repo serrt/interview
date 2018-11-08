@@ -23,6 +23,7 @@
     if (!file) {
         file = 'README.md';
     }
+    file += '.md';
     var host = window.location.host;
     var uri = 'http://localhost/interview/';
     if (window.location.host.indexOf('github') >= 0) {
@@ -31,6 +32,8 @@
     url = uri+file;
     $.get(url).then(function (res) {
         document.getElementById('preview').innerHTML = markdown.toHTML(res);
+    }, function (error) {
+        document.getElementById('preview').innerHTML = '<h1>'+error.status+'</h1>';
     })
 </script>
 </html>
