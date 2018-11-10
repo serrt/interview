@@ -61,3 +61,15 @@ ServerAliveInterval 60
 
 - `nohup php artisan queue:listen &`
 - 生成测试中文数据 `config/app.php` 加入 `faker_locale => 'zh_CN'`, 并不完整
+
+### Laravel-excel
+
+Excel扩展, 文档地址[https://laravel-excel.maatwebsite.nl](https://laravel-excel.maatwebsite.nl)
+
+- 读取Excel时, 注意Excel文件有多个 **Sheet** 的问题
+
+```php
+\Maatwebsite\Excel\Facades\Excel::load($file, function($reader) {
+    $data = $reader->get()->first();
+});
+```
