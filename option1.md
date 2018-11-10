@@ -51,6 +51,60 @@
 
 在控制器里面添加表单验证
 
+```php
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+
+class ExampleController extends Controller
+{
+    public function index(Request $request)
+    {
+        // 验证失败, 会直接返回来源页面, 同时带上错误消息
+        $request->validate([
+            'username' => 'required|unique:admin_users,username',
+            'password' => 'required|between:6,10'
+        ], [
+            'username.required' => '用户名必填',
+            'username.unique' => '用户名已存在',
+            'password.required' => '密码必填',
+            'password.between' => '密码长度 6 - 10 个字符之间'
+        ]);
+
+        // 业务代码
+    }
+
+    public function store(Request $request)
+    {
+        $validator = Validator::make([
+            'username' => 'admin'
+            'password' => '123456'
+        ], [
+            'username' => 'required|unique:admin_users,username',
+            'password' => 'required|between:6,10'
+        ], [
+            'username.required' => '用户名必填',
+            'username.unique' => '用户名已存在',
+            'password.required' => '密码必填',
+            'password.between' => '密码长度 6 - 10 个字符之间'
+        ]);
+
+        // 验证失败
+        if ($validator->fails()) {
+
+            // 错误消息 Object
+            $errors = $validator->errors();
+
+            return back()->withErrors($errors);
+        }
+
+        // 业务代码
+    }
+}
+
+```
+
 - `php artisan make:request ExampleRequest` 为单个请求生成独立的验证文件
 
 ### 模型
