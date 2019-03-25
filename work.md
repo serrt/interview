@@ -63,6 +63,7 @@ ServerAliveInterval 60
 - `nohup php artisan queue:listen &`
 - 生成测试中文数据 `config/app.php` 加入 `faker_locale => 'zh_CN'`, 并不完整
 - 模型添加的默认值, 仅限 `ExampleModel::create()`, `ExampleModel->save()` 有效
+- 配置网站的 **https**: 文件 `app/Providers/AppServiceProvider` 的 `boot` 方法中添加 `$this->app['request']->server->set('HTTPS', str_contains(config('app.url'), 'https://'));`
 
 ```php
 class ExampleModel extends Model
