@@ -26,7 +26,12 @@ login 用户名, 如: serrt
 password 密码, 如: password
 ```
 
-- 保持ssh长时间的活性: `git安装目录/etc/ssh/ssh_config`, 添加
+- Git Remote
+
+`git remote add origin Git地址`
+`git remote remove origin`
+
+- 保持ssh长时间的活性(Win Git Bash): `git安装目录/etc/ssh/ssh_config`, 添加
 
 ```
 ServerAliveInterval 60
