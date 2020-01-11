@@ -2,20 +2,20 @@
 # 个人信息
 
  - 潘亮/男/1995 
- - 专科/重庆大学计算机应用(在读) 
- - 工作年限：5年
- - Github：[http://github.com/serrt](http://github.com/serrt)
- - Gitee：[https://gitee.com/panliang](https://gitee.com/panliang)
- - 期望薪资：15K
- - 期望城市：重庆
+ - 大专/重庆大学计算机应用(在读) 
+ - 工作年限: 5年
+ - Github: [http://github.com/serrt](http://github.com/serrt)
+ - Gitee: [https://gitee.com/panliang](https://gitee.com/panliang)
+ - 期望薪资: 15K
+ - 期望城市: 重庆
 
 ---
 
 # 联系方式
 
-- 手机：182233350967
-- Email：1163816051@qq.com
-- 微信号：18223350967
+- 手机: 182233350967
+- Email: 1163816051@qq.com
+- 微信号: 18223350967
 
 ---
       
@@ -23,7 +23,7 @@
 
 ## 重庆培迪科技有限公司 (2018.07-至今)
 
-### 钟湾村智慧党群服务平台(http://www.jszzwc.com)
+### [钟湾村智慧党群服务平台](http://www.jszzwc.com)
 智慧社区, 智慧办公
 
 - 功能概括: 综治, 党建, 社会事务, 财务...
@@ -35,6 +35,11 @@
 - 三方服务: [微信服务商](https://pay.weixin.qq.com/wiki/doc/api/sl.html), [支付宝服务商](https://open.alipay.com), [索迪斯支付](http://sodexo.cn)...
 
 ![](swfc.jpg)
+
+### 智能设备
+使用 socket 连接硬件设备, 控制和记录设备数据
+
+- 人体检测, 安防报警, 烟雾报警, 潮汐卫生间...
 
 ## 重庆炜时达科技有限公司（2017.05-2018.05）
 
@@ -62,7 +67,7 @@ P2P网贷
 - Web开发: PHP
 - Web框架: ThinkPHP/Lavarel
 - 前端框架: Vue/Sass/Less
-- 数据库相关: MySQL/MongoDB/Sql Server
+- 数据库相关: MySQL/MongoDB/Redis
 - 版本管理: Svn/Git
 - 服务器: centos/linux
 - 云和开放平台：Dcloud/APICloud/淘宝开放平台/京东开放平台/微信开发平台/支付宝
