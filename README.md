@@ -70,7 +70,7 @@ P2P网贷
 - 数据库相关: MySQL/MongoDB/Redis
 - 版本管理: Svn/Git
 - 服务器: centos/linux
-- 云和开放平台：Dcloud/APICloud/淘宝开放平台/京东开放平台/微信开发平台/支付宝
+- 云和开放平台：Dcloud/APICloud/淘宝开放平台/京东开放平台/微信开放平台/支付宝
       
 ---
 
