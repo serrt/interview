@@ -29,7 +29,7 @@
 
 ### FOOD GARDEN SWFC
 
-- 项目组成: 小程序, 商户客户端(apk, 内部使用), [商户后台](https://www.swfcfoodgarden.com/merchant), [管理后台](https://www.swfcfoodgarden.com/admin)
+- 项目组成: 微信小程序, 商户客户端(apk, 内部使用), [商户后台](https://www.swfcfoodgarden.com/merchant), [管理后台](https://www.swfcfoodgarden.com/admin)
 - 项目架构: [mpVue](http://mpvue.com/), [uni-app](https://uniapp.dcloud.io/), [Laravel](https://laravel.com)
 - 三方服务: [微信服务商](https://pay.weixin.qq.com/wiki/doc/api/sl.html), [支付宝服务商](https://open.alipay.com), [索迪斯支付](http://sodexo.cn)...
 
@@ -69,7 +69,7 @@ P2P网贷
 - 数据库相关: MySQL/MongoDB/Redis
 - 版本管理: Svn/Git
 - 服务器: centos/linux
-- 云和开放平台：Dcloud/APICloud/淘宝开放平台/京东开放平台/微信开发平台/支付宝
+- 云和开放平台：Dcloud/APICloud/淘宝开放平台/京东开放平台/微信开放平台/支付宝
       
 ---
 
