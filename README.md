@@ -5,7 +5,6 @@
  - 大专/重庆大学计算机应用(在读) 
  - 工作年限: 5年
  - Github: [http://github.com/serrt](http://github.com/serrt)
- - Gitee: [https://gitee.com/panliang](https://gitee.com/panliang)
  - 期望薪资: 15K
  - 期望城市: 重庆
 
