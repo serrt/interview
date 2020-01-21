@@ -57,7 +57,7 @@
 P2P网贷
 根据需求开发和维护项目, 后期主要是开发每期的活动。
 
-- 项目架构: [Laravel 框架](https://laravel.com), html/js, [Vue](https://cn.vuejs.org), [APICloud 打包](https://www.apicloud.com), [Cordova 打包](http://cordova.apache.org)
+- 项目架构: [Laravel](https://laravel.com), html/js, [Vue](https://cn.vuejs.org), [APICloud 打包](https://www.apicloud.com), [Cordova 打包](http://cordova.apache.org)
 - [新浪支付](http://pay.mobile.sina.cn)
 - IOS的上架和发布
 
