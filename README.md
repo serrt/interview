@@ -33,6 +33,7 @@
 - 功能概括: 综治, 党建, 社会事务, 财务...
 
 ### FOOD GARDEN SWFC
+微信小程序, 多商家在线点餐, 门店收款app
 
 - 项目组成: 微信小程序, 商户客户端(apk, 内部使用), [商户后台](https://www.swfcfoodgarden.com/merchant), [管理后台](https://www.swfcfoodgarden.com/admin)
 - 项目架构: [mpVue](http://mpvue.com/), [uni-app](https://uniapp.dcloud.io/), [Laravel](https://laravel.com)
