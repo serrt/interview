@@ -6,6 +6,7 @@
  - 工作年限: 5年
  - Github: [http://github.com/serrt](http://github.com/serrt)
  - 期望城市: 重庆
+ - 期望薪资: 15K
 
 ---
 
