@@ -43,8 +43,6 @@
 - 项目组成: 微信小程序, 商户客户端(apk, 内部使用), [商户后台](https://www.swfcfoodgarden.com/merchant), [管理后台](https://www.swfcfoodgarden.com/admin)
 - 三方服务: [微信服务商](https://pay.weixin.qq.com/wiki/doc/api/sl.html), [支付宝服务商](https://open.alipay.com), [索迪斯支付](http://sodexo.cn)
 
-![](swfc.jpg)
-
 ### 希街6号(2019.05-2019.07)
 使用 socket 连接硬件设备, 控制和记录设备数据
 
