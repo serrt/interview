@@ -1,5 +1,5 @@
 # Coder
-记录一下自己平时总结的笔记, d5f4cf3ed11359f849d7b5f9d61e9fc60e5ce994
+记录一下自己平时总结的笔记
 
 ## [Git](#git)
 ## [资源](#resource)

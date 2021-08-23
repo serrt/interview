@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh_CN">
 <head>
     <title>Serrt | Github</title>
     <meta charset="utf-8">
@@ -42,7 +42,6 @@
         </svg>
     </a>
 </body>
-<script src="jquery.min.js"></script>
 <script src="markdown.js"></script>
 <script type="text/javascript">
     function getQueryString(name) { 
@@ -59,15 +58,38 @@
     }
     file += '.md';
     var host = window.location.host;
-    var uri = 'http://localhost/interview/';
+    var uri = 'http://local.demo.host/interview/';
     if (host.indexOf('github') >= 0) {
         uri = 'https://raw.githubusercontent.com/serrt/interview/master/';
     }
     url = uri+file;
-    $.get(url).then(function (res) {
-        document.getElementById('preview').innerHTML = markdown.toHTML(res);
-    }, function (error) {
-        document.getElementById('preview').innerHTML = '<h1>'+error.status+'</h1>';
+    fetch(url)
+    .then(response => response.body)
+    .then(rb => {
+        const reader = rb.getReader();
+
+        return new ReadableStream({
+            start(controller) {
+                function push() {
+                    reader.read().then( ({done, value}) => {
+                        if (done) {
+                            controller.close();
+                            return;
+                        }
+                        controller.enqueue(value);
+                        push();
+                    })
+                }
+
+                push();
+            }
+        });
+    })
+    .then(stream => {
+        return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+    })
+    .then(result => {
+        document.getElementById('preview').innerHTML = markdown.toHTML(result)
     })
 </script>
 </html>
